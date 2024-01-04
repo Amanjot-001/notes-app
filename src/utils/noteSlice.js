@@ -18,8 +18,16 @@ const noteSlice = createSlice({
             state.items = state.items.filter((note) => note.id !== action.payload);
         },
         editNote: (state, action) => {
+            const { id, ...updatedNote } = action.payload;
+            const existingNoteIndex = state.items.findIndex((note) => note.id === id);
 
-        }
+            if (existingNoteIndex !== -1) {
+                state.items[existingNoteIndex] = {
+                    ...state.items[existingNoteIndex],
+                    ...updatedNote,
+                };
+            }
+        },
     }
 });
 

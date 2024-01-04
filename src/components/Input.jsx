@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from '../utils/noteSlice';
+import { useNavigate } from "react-router-dom";
 
 const Input = () => {
     const [title, setTitle] = useState('');
     const [note, setNote] = useState('');
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -17,6 +20,7 @@ const Input = () => {
             setTitle('');
             setNote('');
         }
+        navigate('/');
     }
 
     return (

@@ -1,18 +1,13 @@
 import PropTypes from 'prop-types';
-import { deleteNote, editNote } from '../utils/noteSlice';
+import { deleteNote } from '../utils/noteSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-const Note = ({ title, content, id}) => {
+const Note = ({ title, content, id }) => {
     const dispatch = useDispatch();
 
     const handleDelete = () => {
         dispatch(deleteNote(id));
-    }
-
-    const handleEdit = () => {
-        dispatch(editNote({
-
-        }));
     }
 
     return (
@@ -24,13 +19,14 @@ const Note = ({ title, content, id}) => {
                 {content}
             </div>
             <div className="btns flex gap-4">
-                <div 
-                    className="edit p-2 bg-black text-white cursor-pointer rounded-md"
-                    onClick={handleEdit}
-                >
-                    Edit
-                </div>
-                <div 
+                <Link to={`/edit/${id}`} >
+                    <div
+                        className="edit p-2 bg-black text-white cursor-pointer rounded-md"
+                    >
+                        Edit
+                    </div>
+                </Link>
+                <div
                     className="delete p-2 bg-black text-white cursor-pointer rounded-md"
                     onClick={handleDelete}
                 >

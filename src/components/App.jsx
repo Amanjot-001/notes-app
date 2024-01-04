@@ -2,7 +2,7 @@ import '../assets/styles/App.css'
 import { Provider } from 'react-redux'
 import appStore from '../utils/store'
 import Input from './Input'
-import Notes from './Notes'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <h1 className='flex justify-center items-center text-3xl'>My notes</h1>
         <Input />
         <div className='w-full h-[1px] bg-black opacity-50'></div>
-        <Notes />
+        <Outlet />
       </div>
     </Provider>
   )
