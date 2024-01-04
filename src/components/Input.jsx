@@ -12,7 +12,7 @@ const Input = () => {
     const dispatch = useDispatch();
 
     const handleAddBtn = () => {
-        if (title && note) {
+        if (title.replace(/\s+/g, " ").trim() && note.replace(/\s+/g, " ").trim()) {
             dispatch(addNote({
                 title,
                 note,

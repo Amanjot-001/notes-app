@@ -44,23 +44,25 @@ const Edit = () => {
     return (
         <>
             {noteToDisplay ? (
-                <div className="flex">
-                    <div className="heading">
+                <div className="flex flex-col w-2/4 justify-center items-center gap-8">
+                    <div className="heading flex w-full justify-between">
                         <p className="font-bold">Title:</p>
                         <input
                             type="text"
                             value={editedNote.title}
                             onChange={handleTitleChange}
+                            className="border border-black rounded-md p-2 w-3/4"
                         />
                     </div>
-                    <div className="content">
-                        <p>Content:</p>
+                    <div className="content flex w-full justify-between">
+                        <p className="font-bold">Content:</p>
                         <textarea
                             value={editedNote.note}
                             onChange={handleNoteChange}
+                            className="border border-black rounded-md p-2 w-3/4 h-40 resize-none"
                         />
                     </div>
-                    <div className="save" onClick={handleSave}>
+                    <div className="save cursor-pointer py-2 px-4 bg-black text-white rounded-md self-start" onClick={handleSave}>
                         Save
                     </div>
                 </div>
