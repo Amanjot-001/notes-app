@@ -1,6 +1,6 @@
 # Project Name
 
-[![Video Demo](https://drive.google.com/file/d/1Vtc9vz7ICqTNJ9ZAznOksSCRSx1xvFXZ/view?usp=sharing)](https://drive.google.com/file/d/1DmKFlmWAhGGafKWw2z2I8WS-t064Bw0U/view?usp=sharing)
+![Video Demo](https://drive.google.com/file/d/1DmKFlmWAhGGafKWw2z2I8WS-t064Bw0U/view?usp=sharing)
 
 ## Description
 
