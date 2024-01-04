@@ -12,7 +12,7 @@ const Input = () => {
         if (title && note) {
             dispatch(addNote({
                 title,
-                note
+                note,
             }))
             setTitle('');
             setNote('');
@@ -21,25 +21,25 @@ const Input = () => {
 
     return (
         <div className="flex flex-col justify-center items-center gap-4 w-full">
-            <input 
-                type="text" 
-                id="title" 
+            <input
+                type="text"
+                id="title"
                 placeholder="Title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-2/4 p-2 border border-black rounded-md" 
+                className="w-2/4 p-2 border border-black rounded-md"
             />
 
-            <textarea 
-                type="text" 
-                id="note" 
-                placeholder="Content" 
+            <textarea
+                type="text"
+                id="note"
+                placeholder="Content"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                className="w-2/4 h-40 p-2 border border-black rounded-md resize-none" 
+                className="w-2/4 h-40 p-2 border border-black rounded-md resize-none"
             />
 
-            <button 
+            <button
                 className="bg-black text-white py-2 px-4 cursor-pointer rounded-md"
                 onClick={handleAddBtn}
             >

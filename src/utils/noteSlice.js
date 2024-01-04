@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from 'uuid';
 
 const noteSlice = createSlice({
     name: "notes",
@@ -7,13 +8,14 @@ const noteSlice = createSlice({
     },
     reducers: {
         addNote: (state, action) => {
-            state.items.push(action.payload);
+            const newNote = {
+                id: uuidv4(),
+                ...action.payload,
+            };
+            state.items.push(newNote);
         },
         deleteNote: (state, action) => {
-            return {
-                ...state,
-                notes: state.items.filter((note) => note.id !== action.payload),
-            };
+            state.items = state.items.filter((note) => note.id !== action.payload);
         },
         editNote: (state, action) => {
 
