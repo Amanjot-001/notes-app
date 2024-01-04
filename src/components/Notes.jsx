@@ -1,7 +1,14 @@
+import Note from "./Note";
+
 const Notes = () => {
     return (
-        <div className="">
-            
+        <div className="flex flex-wrap gap-6 items-center justify-start overflow-y-auto">
+            <Note />
+            <Note />
+            <Note />
+            <Note />
+            <Note />
+            <Note />
         </div>
     );
 };
