@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from '../utils/noteSlice';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Input = () => {
     const [title, setTitle] = useState('');
@@ -22,6 +23,13 @@ const Input = () => {
         }
         navigate('/');
     }
+
+    useEffect(() => {
+        const storedNotes = JSON.parse(localStorage.getItem('notes'));
+        if (storedNotes) {
+            storedNotes.forEach(note => dispatch(addNote(note)));
+        }
+    }, [dispatch]);
 
     return (
         <div className="flex flex-col justify-center items-center gap-4 w-full">
