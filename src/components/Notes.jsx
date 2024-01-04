@@ -10,7 +10,7 @@ const Notes = () => {
     }, [allNotes]);
 
     return (
-        <div className="flex flex-wrap gap-6 items-center justify-start overflow-y-auto w-full">
+        <div className="flex flex-wrap gap-6 items-center justify-start overflow-y-auto w-full max-lg:justify-center">
             {allNotes.length > 0 ?
                 allNotes.map((note, index) => (
                     <Note

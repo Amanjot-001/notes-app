@@ -52,7 +52,7 @@ const Input = () => {
             />
 
             <button
-                className="bg-black text-white py-2 px-4 cursor-pointer rounded-md"
+                className="bg-black text-white py-2 px-4 cursor-pointer rounded-md max-md:py-1 max-md:px-2"
                 onClick={handleAddBtn}
             >
                 Add

@@ -14,7 +14,7 @@ const Note = ({ title, content, id }) => {
         }
     }
 
-    const maxContentLength = 50;
+    const maxContentLength = 40;
     const maxTitleLength = 30;
 
     const truncatedContent = content.length > maxContentLength
@@ -26,7 +26,7 @@ const Note = ({ title, content, id }) => {
         : title;
 
     return (
-        <div className="flex flex-col justify-center p-4 border border-black rounded-md w-1/5 min-h-48 gap-4">
+        <div className="flex flex-col justify-center p-4 border border-black rounded-md w-1/4 min-h-48 gap-4 overflow-hidden max-lg:w-2/4 max-md:p-2 max-sm:w-3/4">
             <div className="heading font-bold">
                 {truncatedTitle}
             </div>
@@ -36,13 +36,13 @@ const Note = ({ title, content, id }) => {
             <div className="btns flex gap-4">
                 <Link to={`/edit/${id}`} >
                     <div
-                        className="edit p-2 bg-black text-white cursor-pointer rounded-md"
+                        className="edit p-2 bg-black text-white cursor-pointer rounded-md max-md:text-sm max-md:py-1 max-md:px-2"
                     >
                         Edit
                     </div>
                 </Link>
                 <div
-                    className="delete p-2 bg-black text-white cursor-pointer rounded-md"
+                    className="delete p-2 bg-black text-white cursor-pointer rounded-md max-md:text-sm max-md:py-1 max-md:px-2"
                     onClick={handleDelete}
                 >
                     Delete
