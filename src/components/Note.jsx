@@ -14,13 +14,24 @@ const Note = ({ title, content, id }) => {
         }
     }
 
+    const maxContentLength = 50;
+    const maxTitleLength = 30;
+
+    const truncatedContent = content.length > maxContentLength
+        ? `${content.substring(0, maxContentLength)}...`
+        : content;
+
+    const truncatedTitle = title.length > maxTitleLength
+        ? `${title.substring(0, maxTitleLength)}...`
+        : title;
+
     return (
-        <div className="flex flex-col justify-center p-4 border border-black rounded-md w-1/5 gap-4">
+        <div className="flex flex-col justify-center p-4 border border-black rounded-md w-1/5 min-h-48 gap-4">
             <div className="heading font-bold">
-                {title}
+                {truncatedTitle}
             </div>
             <div className="content">
-                {content}
+                {truncatedContent}
             </div>
             <div className="btns flex gap-4">
                 <Link to={`/edit/${id}`} >
