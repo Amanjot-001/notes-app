@@ -7,7 +7,11 @@ const Note = ({ title, content, id }) => {
     const dispatch = useDispatch();
 
     const handleDelete = () => {
-        dispatch(deleteNote(id));
+        const isConfirmed = window.confirm('Are you sure you want to delete this note?');
+
+        if (isConfirmed) {
+            dispatch(deleteNote(id));
+        }
     }
 
     return (
